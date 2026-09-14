@@ -2,6 +2,19 @@
 
 const hiddenElements= document.querySelectorAll(('.hidden'))
 
+const hiddenFadeElements = document.querySelectorAll('.hidden-fade')
+
+const observerFade = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if(entry.isIntersecting){
+            entry.target.classList.add('show-fade')
+        }
+        else {
+            entry.target.classList.remove('show-fade')
+        }
+    });
+})
+
 const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if(entry.isIntersecting){
@@ -14,3 +27,4 @@ const observer = new IntersectionObserver((entries) => {
 })
 
 hiddenElements.forEach((el)=> observer.observe(el));
+hiddenFadeElements.forEach((el)=> observerFade.observe(el));

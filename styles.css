@@ -4,7 +4,6 @@ section {
     display: grid;
     place-items: center;
     align-items: center;
-    min-height: 100vh;
 }
 
 .hidden {
@@ -18,6 +17,15 @@ section {
     opacity: 1;
     filter: blur(0);
     transform: translateX(0);
+}
+
+.hidden-fade {
+    opacity: 0;
+    transition: all 2s;
+}
+
+.show-fade {
+    opacity: 1;
 }
 
 .wave-green-top {
@@ -45,8 +53,12 @@ section {
 }
 
 .white {
-    background: whitesmoke;
+    /*background: whitesmoke;*/
+    position: relative;
+    height: 112vh;
 }
+
+
 
 .wave-green-bottom {
     position: absolute;
@@ -66,5 +78,54 @@ section {
 }
 
 .wave-green-bottom .shape-fill {
+    fill: #268D46;
+}
+
+.triangle-green-top {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    transform: rotate(180deg);
+}
+
+.triangle-green-top svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 110px;
+    transform: rotateY(180deg);
+}
+
+.triangle-green-top .shape-fill {
+    fill: #268D46;
+}
+
+.mission-section {
+    position: relative;
+    height: 75vh
+}
+
+.green-waves-bottom-mission {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    transform: rotate(180deg);
+}
+
+.green-waves-bottom-mission svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 63px;
+    transform: rotateY(180deg);
+}
+
+.green-waves-bottom-mission .shape-fill {
     fill: #268D46;
 }
